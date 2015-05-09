@@ -51,6 +51,9 @@
     <Compile Include="BrandSelectionActivity.cs" />
     <Compile Include="Data\RestQuery.cs" />
     <Compile Include="Adapters\BrandAdapter.cs" />
+    <Compile Include="BrandLocationSelectionActivity.cs" />
+    <Compile Include="MainViewActivity.cs" />
+    <Compile Include="Adapters\BrandLocationAdapter.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -67,6 +70,8 @@
     <AndroidResource Include="Resources\drawable-xhdpi\getmeto_logo.png" />
     <AndroidResource Include="Resources\layout\BrandListItem.axml" />
     <AndroidResource Include="Resources\values\Styles.xml" />
+    <AndroidResource Include="Resources\layout\BrandLocationListItem.axml" />
+    <AndroidResource Include="Resources\layout\MainView.axml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
   <ItemGroup>

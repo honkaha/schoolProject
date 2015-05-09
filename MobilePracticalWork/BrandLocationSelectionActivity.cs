@@ -14,22 +14,27 @@ using System.Json;
 
 namespace MobilePracticalWork
 {
-	[Activity (Label = "BrandSelectionActivity")]			
-	public class BrandSelectionActivity : ListActivity
+	[Activity (Label = "BrandLocationSelectionActivity")]			
+	public class BrandLocationSelectionActivity : ListActivity
 	{
+		private string _brandId;
 		protected override void OnCreate (Bundle bundle)
 		{
 			base.OnCreate (bundle);
 
 			this.Title = (this as Context).Resources.GetString (Resource.String.BrandSelectionTitle);
 
-			this.ListAdapter = new BrandAdapter (this, RestQuery.GetBrands ());
+			_brandId = Intent.GetStringExtra("brandId");
+			var result = RestQuery.GetBrandLocations (_brandId);
+			this.ListAdapter = new BrandLocationAdapter (this, result);
 			this.ListView.ItemClick += (object sender, AdapterView.ItemClickEventArgs e) => 
 			{
 				var mainView = new Intent (this, typeof(MainViewActivity));
-				mainView.PutExtra("brandId", (string)(this.ListAdapter as BrandAdapter)[e.Position]["idBrand"]);
+				mainView.PutExtra("brandLocationId", (string)(this.ListAdapter as BrandLocationAdapter)[e.Position]["idBrandLocation"]);
+				mainView.PutExtra("brandId", _brandId);
 				StartActivity (mainView);
 			};
+
 		}
 	}
 }

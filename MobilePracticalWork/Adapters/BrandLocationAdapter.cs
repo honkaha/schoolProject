@@ -7,18 +7,20 @@ using Android.Views;
 
 namespace MobilePracticalWork
 {
-	public class BrandAdapter : BaseAdapter<JsonObject>
+	public class BrandLocationAdapter : BaseAdapter<JsonObject>
 	{
 		List<JsonObject> _items;
 		Activity context;
 
-		public BrandAdapter(Activity context, List<JsonObject> brandValues) : base() {
+		public BrandLocationAdapter(Activity context, List<JsonObject> brandlocationValue) : base() {
 			this.context = context;
 			this._items = new List<JsonObject> ();
-			foreach (var json in brandValues)
+			foreach (var json in brandlocationValue)
 			{
+				Console.Out.WriteLine ("vitu: " + json["fkBrand"]);
 				this._items.Add (json);
 			}
+
 		}
 
 		public override long GetItemId(int position)
@@ -40,15 +42,15 @@ namespace MobilePracticalWork
 			View view = convertView; // re-use an existing view, if one is available
 
 			if (view == null) // otherwise create a new one
-				view = context.LayoutInflater.Inflate(Resource.Layout.BrandListItem, null);
-			
-			view.FindViewById<TextView>(Resource.Id.TypeText).Text = item["type"];
-			view.FindViewById<TextView>(Resource.Id.NameText).Text = item["name"];
-			view.FindViewById<ImageView>(Resource.Id.Image).SetImageResource(Resource.Drawable.Icon);
+				view = context.LayoutInflater.Inflate(Resource.Layout.BrandLocationListItem, null);
+
+			view.FindViewById<TextView>(Resource.Id.nameTextView).Text = item["name"];
+		    view.FindViewById<TextView>(Resource.Id.addressTextView).Text = item["fkAddress"];
+			view.FindViewById<TextView>(Resource.Id.phoneTextView).Text = item["phone"];
+			view.FindViewById<TextView>(Resource.Id.emailTextView).Text = item["email"];
+			view.FindViewById<TextView>(Resource.Id.infoTextView).Text = item["additionalInfo"];
 
 			return view;
 		}
 	}
 }
-
-
