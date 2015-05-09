@@ -6,28 +6,18 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using System.Timers;
 
 namespace MobilePracticalWork
 {
-	[Activity (Label = "MobilePracticalWork", MainLauncher = true, Icon = "@drawable/icon")]
+	[Activity (Theme = "@style/Theme.Splash", MainLauncher = true, Icon = "@drawable/icon", NoHistory = true)]
 	public class MainActivity : Activity
 	{
-		int count = 1;
-
 		protected override void OnCreate (Bundle bundle)
 		{
 			base.OnCreate (bundle);
-
-			// Set our view from the "main" layout resource
-			SetContentView (Resource.Layout.Main);
-
-			// Get our button from the layout resource,
-			// and attach an event to it
-			Button button = FindViewById<Button> (Resource.Id.myButton);
-			
-			button.Click += delegate {
-				button.Text = string.Format ("{0} clicks!", count++);
-			};
+			System.Threading.Thread.Sleep (100);
+			StartActivity (new Intent (this, typeof(BrandSelectionActivity)));
 		}
 	}
 }

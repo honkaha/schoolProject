@@ -2,4 +2,5 @@
 <resources>
 	<string name="hello">Hello World, Click Me!</string>
 	<string name="app_name">MobilePracticalWork</string>
+	<string name="BrandSelectionTitle">Select Brand</string>
 </resources>
