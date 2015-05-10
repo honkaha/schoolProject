@@ -32,6 +32,12 @@ namespace MobilePracticalWork
 				mainView.PutExtra("brandId", brandId);
 				StartActivity (mainView);
 			};
+
+			Button brandSelectionButton = FindViewById<Button> (Resource.Id.buttonBrandSelection);
+			brandSelectionButton.Click += (sender, e) =>
+			{
+				StartActivity (new Intent (this, typeof(BrandSelectionActivity)));
+			};
 		}
 	}
 }

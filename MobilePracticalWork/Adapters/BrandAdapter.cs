@@ -44,7 +44,6 @@ namespace MobilePracticalWork
 			
 			view.FindViewById<TextView>(Resource.Id.TypeText).Text = item["type"];
 			view.FindViewById<TextView>(Resource.Id.NameText).Text = item["name"];
-			view.FindViewById<ImageView>(Resource.Id.Image).SetImageResource(Resource.Drawable.Icon);
 
 			return view;
 		}

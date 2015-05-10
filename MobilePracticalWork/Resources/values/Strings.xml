@@ -3,4 +3,6 @@
 	<string name="hello">Hello World, Click Me!</string>
 	<string name="app_name">MobilePracticalWork</string>
 	<string name="BrandSelectionTitle">Select Brand</string>
+	<string name="SelectBrandLocationButton">Select Store</string>
+	<string name="BrandSelectionButton">&#60; Select Brand</string>
 </resources>

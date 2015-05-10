@@ -22,7 +22,7 @@ namespace MobilePracticalWork
 		{
 			base.OnCreate (bundle);
 
-			this.Title = (this as Context).Resources.GetString (Resource.String.BrandSelectionTitle);
+			this.Title = (this as Context).Resources.GetString (Resource.String.SelectBrandLocationButton);
 
 			_brandId = Intent.GetStringExtra("brandId");
 			var result = RestQuery.GetBrandLocations (_brandId);

@@ -17,7 +17,6 @@ namespace MobilePracticalWork
 			this._items = new List<JsonObject> ();
 			foreach (var json in brandlocationValue)
 			{
-				Console.Out.WriteLine ("vitu: " + json["fkBrand"]);
 				this._items.Add (json);
 			}
 
@@ -44,11 +43,39 @@ namespace MobilePracticalWork
 			if (view == null) // otherwise create a new one
 				view = context.LayoutInflater.Inflate(Resource.Layout.BrandLocationListItem, null);
 
+			var brand = RestQuery.GetBrand(item["fkBrand"]);
+			JsonObject address = null;
+			JsonObject location = null;
+
+			try 
+			{
+				address = RestQuery.GetAddress(item["fkAddress"]);
+			} 
+			catch (Exception exp) {
+				Console.Out.WriteLine ("Address getting failed" + exp.Message);
+			}
+
+			try 
+			{
+				location = RestQuery.GetLocation(item["fkLocation"]);
+			} 
+			catch (Exception exp) {
+				Console.Out.WriteLine ("Location getting failed" + exp.Message);
+			}
+
+			view.FindViewById<TextView>(Resource.Id.brandTextView).Text = brand["name"];
 			view.FindViewById<TextView>(Resource.Id.nameTextView).Text = item["name"];
-		    view.FindViewById<TextView>(Resource.Id.addressTextView).Text = item["fkAddress"];
-			view.FindViewById<TextView>(Resource.Id.phoneTextView).Text = item["phone"];
-			view.FindViewById<TextView>(Resource.Id.emailTextView).Text = item["email"];
-			view.FindViewById<TextView>(Resource.Id.infoTextView).Text = item["additionalInfo"];
+
+			if (address != null) {
+				view.FindViewById<TextView> (Resource.Id.addressTextView).Text = item ["fkAddress"];
+			} else if (location != null) {
+				view.FindViewById<TextView> (Resource.Id.addressTextView).Text = 
+					location ["latitude"] + ", " + location ["longitude"];
+					
+			} else {
+				view.FindViewById<TextView> (Resource.Id.addressTextView).Text = "No data";
+			}
+
 
 			return view;
 		}

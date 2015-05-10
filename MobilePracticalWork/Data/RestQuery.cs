@@ -46,13 +46,11 @@ namespace MobilePracticalWork
 				.ToList();
 		}
 
-		public static List<JsonObject> GetBrand(string id)
+		public static JsonObject GetBrand(string id)
 		{
 			var replyJson = Query ("Brand");
-			return ((replyJson ["Brand"] as JsonArray)
-				.Where (v => v ["idBrand"] == id))
-				.Select(j => j as JsonObject)
-				.ToList();
+			return (replyJson ["Brand"] as JsonArray)
+				.First (v => v ["idBrand"] == id) as JsonObject;
 		}
 
 		public static List<JsonObject> GetBrandLocations(string brandId)
@@ -78,6 +76,13 @@ namespace MobilePracticalWork
 			var replyJson = Query ("Address");
 			return (replyJson ["Address"] as JsonArray)
 				.First (v => v ["idAddress"] == id) as JsonObject;
+		}
+
+		public static JsonObject GetLocation(string id)
+		{
+			var replyJson = Query ("Location");
+			return (replyJson ["Location"] as JsonArray)
+				.First (v => v ["idLocation"] == id) as JsonObject;
 		}
 	}
 }

@@ -3,7 +3,7 @@
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
     android:padding="8dp"
-    android:background="@android:color/white">
+    android:background="@drawable/CustomListSelector">
     <LinearLayout
         android:id="@+id/Text"
         android:orientation="vertical"
@@ -13,17 +13,12 @@
         <TextView
             android:id="@+id/TypeText"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/black" />
         <TextView
             android:id="@+id/NameText"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/black" />
     </LinearLayout>
-    <ImageView
-        android:id="@+id/Image"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:padding="5dp"
-        android:src="@drawable/icon"
-        android:layout_alignParentRight="true" />
 </RelativeLayout>

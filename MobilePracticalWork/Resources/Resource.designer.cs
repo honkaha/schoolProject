@@ -45,10 +45,13 @@ namespace MobilePracticalWork
 		{
 			
 			// aapt resource value: 0x7f020000
-			public const int getmeto_logo = 2130837504;
+			public const int CustomListSelector = 2130837504;
 			
 			// aapt resource value: 0x7f020001
-			public const int Icon = 2130837505;
+			public const int getmeto_logo = 2130837505;
+			
+			// aapt resource value: 0x7f020002
+			public const int Icon = 2130837506;
 			
 			static Drawable()
 			{
@@ -63,9 +66,6 @@ namespace MobilePracticalWork
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f060003
-			public const int Image = 2131099651;
-			
 			// aapt resource value: 0x7f060002
 			public const int NameText = 2131099650;
 			
@@ -78,23 +78,20 @@ namespace MobilePracticalWork
 			// aapt resource value: 0x7f060005
 			public const int addressTextView = 2131099653;
 			
-			// aapt resource value: 0x7f06000a
-			public const int buttonBrandLocationSelect = 2131099658;
-			
-			// aapt resource value: 0x7f060007
-			public const int emailTextView = 2131099655;
+			// aapt resource value: 0x7f060003
+			public const int brandTextView = 2131099651;
 			
 			// aapt resource value: 0x7f060008
-			public const int infoTextView = 2131099656;
+			public const int buttonBrandLocationSelect = 2131099656;
+			
+			// aapt resource value: 0x7f060006
+			public const int buttonBrandSelection = 2131099654;
 			
 			// aapt resource value: 0x7f060004
 			public const int nameTextView = 2131099652;
 			
-			// aapt resource value: 0x7f060006
-			public const int phoneTextView = 2131099654;
-			
-			// aapt resource value: 0x7f060009
-			public const int textView1 = 2131099657;
+			// aapt resource value: 0x7f060007
+			public const int textView1 = 2131099655;
 			
 			static Id()
 			{
@@ -131,8 +128,14 @@ namespace MobilePracticalWork
 		public partial class String
 		{
 			
+			// aapt resource value: 0x7f040004
+			public const int BrandSelectionButton = 2130968580;
+			
 			// aapt resource value: 0x7f040002
 			public const int BrandSelectionTitle = 2130968578;
+			
+			// aapt resource value: 0x7f040003
+			public const int SelectBrandLocationButton = 2130968579;
 			
 			// aapt resource value: 0x7f040001
 			public const int app_name = 2130968577;

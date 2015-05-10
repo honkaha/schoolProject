@@ -54,6 +54,7 @@
     <Compile Include="BrandLocationSelectionActivity.cs" />
     <Compile Include="MainViewActivity.cs" />
     <Compile Include="Adapters\BrandLocationAdapter.cs" />
+    <Compile Include="Data\LocationService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -72,6 +73,7 @@
     <AndroidResource Include="Resources\values\Styles.xml" />
     <AndroidResource Include="Resources\layout\BrandLocationListItem.axml" />
     <AndroidResource Include="Resources\layout\MainView.axml" />
+    <AndroidResource Include="Resources\drawable-xhdpi\CustomListSelector.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
   <ItemGroup>
