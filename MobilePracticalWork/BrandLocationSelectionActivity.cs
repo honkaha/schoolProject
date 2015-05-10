@@ -11,10 +11,11 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using System.Json;
+using Android.Content.PM;
 
 namespace MobilePracticalWork
 {
-	[Activity (Label = "BrandLocationSelectionActivity")]			
+	[Activity (Label = "BrandLocationSelectionActivity", ScreenOrientation = ScreenOrientation.Portrait)]			
 	public class BrandLocationSelectionActivity : ListActivity
 	{
 		private string _brandId;

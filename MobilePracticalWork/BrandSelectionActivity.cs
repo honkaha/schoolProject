@@ -11,10 +11,11 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using System.Json;
+using Android.Content.PM;
 
 namespace MobilePracticalWork
 {
-	[Activity (Label = "BrandSelectionActivity")]			
+	[Activity (Label = "BrandSelectionActivity", ScreenOrientation = ScreenOrientation.Portrait)]			
 	public class BrandSelectionActivity : ListActivity
 	{
 		protected override void OnCreate (Bundle bundle)

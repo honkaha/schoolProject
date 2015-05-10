@@ -15,10 +15,11 @@ using Android.Gms.Maps.Model;
 using Android.Locations;
 using System.Json;
 using Android.Hardware;
+using Android.Content.PM;
 
 namespace MobilePracticalWork
 {
-	[Activity (Label = "MainViewActivity")]			
+	[Activity (Label = "MainViewActivity", ScreenOrientation = ScreenOrientation.Portrait)]			
 	public class MainViewActivity : Activity, IOnMapReadyCallback, ILocationListener
 	{
 		private GoogleMap _map;
@@ -28,7 +29,7 @@ namespace MobilePracticalWork
 
 		private SensorManager _sensorManager;
 		private CompassView _compassView;
-		public List<float> CompassValues;
+
 
 		protected override void OnCreate (Bundle bundle)
 		{
@@ -85,6 +86,7 @@ namespace MobilePracticalWork
 			
 		public void OnLocationChanged (Location currentLocation)
 		{
+			_compassView.CurrentLocation = currentLocation;
 			_currentLocation = currentLocation;
 		}
 
@@ -110,7 +112,7 @@ namespace MobilePracticalWork
 				_map.AnimateCamera (cu);
 				return;
 			}
-
+			_compassView.TargetLocation = targetLocation;
 			var targetLatLng = new LatLng(targetLocation.Latitude, targetLocation.Longitude);
 			var targetOpt = new MarkerOptions();
 			targetOpt.SetPosition(targetLatLng);
@@ -149,9 +151,14 @@ namespace MobilePracticalWork
 			return brand ["name"] + ", " + brandLocation ["name"];
 		}
 
-		private LatLng GetCurrentStoreLocation(string brandLocationId)
+		private Location GetCurrentStoreLocation(string brandLocationId)
 		{
-			return ParseLocationFromBrandLocationJson (RestQuery.GetBrandLocation (brandLocationId));
+			var locLatLng = ParseLocationFromBrandLocationJson (RestQuery.GetBrandLocation (brandLocationId));
+
+			var retLocation = new Location ("dummy");
+			retLocation.Latitude = locLatLng.Latitude;
+			retLocation.Longitude = locLatLng.Longitude;
+			return retLocation;
 		}
 			
 		private string GetClosestStore(LatLng currentLocation, string brandId) {

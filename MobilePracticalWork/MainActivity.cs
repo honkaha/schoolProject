@@ -7,10 +7,12 @@ using Android.Views;
 using Android.Widget;
 using Android.OS;
 using System.Timers;
+using Android.Content.PM;
 
 namespace MobilePracticalWork
 {
-	[Activity (Theme = "@style/Theme.Splash", MainLauncher = true, Icon = "@drawable/icon", NoHistory = true)]
+	[Activity (Theme = "@style/Theme.Splash", MainLauncher = true, Icon = "@drawable/icon", NoHistory = true, 
+		ScreenOrientation = ScreenOrientation.Portrait)]
 	public class MainActivity : Activity
 	{
 		protected override void OnCreate (Bundle bundle)
