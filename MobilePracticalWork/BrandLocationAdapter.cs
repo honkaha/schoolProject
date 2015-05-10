@@ -67,7 +67,8 @@ namespace MobilePracticalWork
 			view.FindViewById<TextView>(Resource.Id.nameTextView).Text = item["name"];
 
 			if (address != null) {
-				view.FindViewById<TextView> (Resource.Id.addressTextView).Text = item ["fkAddress"];
+				view.FindViewById<TextView> (Resource.Id.addressTextView).Text = 
+					address ["address"] + ", " + address ["town"] + ", " + address ["province"] + ", " + address ["country"];
 			} else if (location != null) {
 				view.FindViewById<TextView> (Resource.Id.addressTextView).Text = 
 					location ["latitude"] + ", " + location ["longitude"];

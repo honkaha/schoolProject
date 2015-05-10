@@ -8,12 +8,21 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:id="@+id/buttonBrandSelection" />
-    <TextView
-        android:text="TestaillaanTaas"
-        android:textAppearance="?android:attr/textAppearanceLarge"
+    <FrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1">
+        <fragment
+            android:id="@+id/mainViewMap"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            class="com.google.android.gms.maps.MapFragment" />
+    </FrameLayout>
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/textView1" />
+        android:id="@+id/compassLayout" />
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
