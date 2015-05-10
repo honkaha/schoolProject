@@ -29,7 +29,7 @@ namespace MobilePracticalWork
 
 		private SensorManager _sensorManager;
 		private CompassView _compassView;
-
+		private TextView _distanceTextView;
 
 		protected override void OnCreate (Bundle bundle)
 		{
@@ -62,8 +62,14 @@ namespace MobilePracticalWork
 
 			_sensorManager = (SensorManager)GetSystemService (Context.SensorService);
 			_compassView = new CompassView (this);
-			var compass = FindViewById<LinearLayout> (Resource.Id.compassLayout);
-			compass.AddView (_compassView);
+			_distanceTextView = new TextView (this);
+			_distanceTextView.Text = "Loading...";
+			_distanceTextView.SetHeight (200);
+			_distanceTextView.SetMinimumWidth (300);
+
+			var compassLayout = FindViewById<LinearLayout> (Resource.Id.compassLayout);
+			compassLayout.AddView (_compassView);
+			compassLayout.AddView (_distanceTextView);
 			locationManager.RequestLocationUpdates(provider, 20000, 0, this);
 			MapFragment mapFrag = (MapFragment) FragmentManager.FindFragmentById(Resource.Id.mainViewMap);
 			mapFrag.GetMapAsync (this);
@@ -105,6 +111,7 @@ namespace MobilePracticalWork
 			if (_brandLocationId == null) {
 				_brandLocationId = GetClosestStore (currentLatLng, _brandId);
 			}
+
 			var targetLocation = GetCurrentStoreLocation (_brandLocationId);
 
 			if (targetLocation == null) {
@@ -116,7 +123,9 @@ namespace MobilePracticalWork
 			var targetLatLng = new LatLng(targetLocation.Latitude, targetLocation.Longitude);
 			var targetOpt = new MarkerOptions();
 			targetOpt.SetPosition(targetLatLng);
-			targetOpt.SetTitle(GetCurrentStoreTitle(_brandLocationId));
+			var title = GetCurrentStoreTitle (_brandLocationId);
+			targetOpt.SetTitle(title);
+			FindViewById<TextView> (Resource.Id.textViewName).Text = title;
 			_map.AddMarker (targetOpt);
 
 			LatLngBounds.Builder builder = new LatLngBounds.Builder();
@@ -174,8 +183,9 @@ namespace MobilePracticalWork
 					closestDistance = distance;
 					closest = bl ["idBrandLocation"];
 				}
+
 			}
-				
+			_distanceTextView.Text = closestDistance.ToString () + " m";
 			return closest;
 		}
 

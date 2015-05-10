@@ -1546,8 +1546,8 @@ namespace MobilePracticalWork
 			// aapt resource value: 0x7f0b0056
 			public const int brandTextView = 2131427414;
 			
-			// aapt resource value: 0x7f0b005c
-			public const int buttonBrandLocationSelect = 2131427420;
+			// aapt resource value: 0x7f0b005d
+			public const int buttonBrandLocationSelect = 2131427421;
 			
 			// aapt resource value: 0x7f0b0059
 			public const int buttonBrandSelection = 2131427417;
@@ -1570,8 +1570,8 @@ namespace MobilePracticalWork
 			// aapt resource value: 0x7f0b0017
 			public const int collapseActionView = 2131427351;
 			
-			// aapt resource value: 0x7f0b005b
-			public const int compassLayout = 2131427419;
+			// aapt resource value: 0x7f0b005c
+			public const int compassLayout = 2131427420;
 			
 			// aapt resource value: 0x7f0b0043
 			public const int decor_content_parent = 2131427395;
@@ -1636,26 +1636,26 @@ namespace MobilePracticalWork
 			// aapt resource value: 0x7f0b0039
 			public const int list_item = 2131427385;
 			
-			// aapt resource value: 0x7f0b005a
-			public const int mainViewMap = 2131427418;
+			// aapt resource value: 0x7f0b005b
+			public const int mainViewMap = 2131427419;
 			
 			// aapt resource value: 0x7f0b002a
 			public const int match_parent = 2131427370;
 			
-			// aapt resource value: 0x7f0b0060
-			public const int media_route_control_frame = 2131427424;
-			
 			// aapt resource value: 0x7f0b0061
-			public const int media_route_disconnect_button = 2131427425;
+			public const int media_route_control_frame = 2131427425;
 			
-			// aapt resource value: 0x7f0b005d
-			public const int media_route_list = 2131427421;
+			// aapt resource value: 0x7f0b0062
+			public const int media_route_disconnect_button = 2131427426;
 			
 			// aapt resource value: 0x7f0b005e
-			public const int media_route_volume_layout = 2131427422;
+			public const int media_route_list = 2131427422;
 			
 			// aapt resource value: 0x7f0b005f
-			public const int media_route_volume_slider = 2131427423;
+			public const int media_route_volume_layout = 2131427423;
+			
+			// aapt resource value: 0x7f0b0060
+			public const int media_route_volume_slider = 2131427424;
 			
 			// aapt resource value: 0x7f0b0015
 			public const int middle = 2131427349;
@@ -1752,6 +1752,9 @@ namespace MobilePracticalWork
 			
 			// aapt resource value: 0x7f0b0022
 			public const int terrain = 2131427362;
+			
+			// aapt resource value: 0x7f0b005a
+			public const int textViewName = 2131427418;
 			
 			// aapt resource value: 0x7f0b003b
 			public const int title = 2131427387;
